@@ -18,9 +18,7 @@ let apiToken = ''; //abcdefghijklmnopqrstuvwxyz123456
 
 let apiHost = ''; // api.v2board.com
 
-if (!isValidUUID(userID)) {
-    throw new Error('uuid is not valid');
-}
+// Removed the check for valid UUID
 
 export default {
     /**
@@ -110,11 +108,14 @@ export default {
                 return await vlessOverWSHandler(request);
             }
         } catch (err) {
-			/** @type {Error} */ let e = err;
+            /** @type {Error} */ let e = err;
             return new Response(e.toString());
         }
     },
 };
+
+// Rest of the code remains unchanged
+
 
 
 
